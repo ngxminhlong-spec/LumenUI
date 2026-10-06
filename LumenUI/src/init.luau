@@ -1,0 +1,23 @@
+--[[
+	Lumen UI
+	A small, modular UI library for Roblox.
+
+	local Lumen = require(ReplicatedStorage.LumenUI)
+	local window = Lumen.CreateWindow({ Title = "My Hub" })
+	local tab = window:AddTab("Main")
+	tab:AddButton({ Name = "Hello", Callback = function() print("hi") end })
+]]
+
+local Window = require(script.Core.Window)
+local Theme = require(script.Theme)
+
+local Lumen = {}
+
+Lumen.Version = "0.1.0"
+Lumen.Themes = Theme
+
+function Lumen.CreateWindow(options)
+	return Window.new(options)
+end
+
+return Lumen
